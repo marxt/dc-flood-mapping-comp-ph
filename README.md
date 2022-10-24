@@ -5,6 +5,8 @@ Detection Algorithms for Flood Mapping`.
 
 The comparisons focus on the change detection flood mapping methods using Sentinel-1 SAR data. 
 
+All files provided with CC BY 4.0 license.
+
 ## Methods
 The research project aims to compare change detection methods that utilizes time-series parameters derived from 
 Sentinel-1 datacube. Methods compared include:
@@ -54,6 +56,12 @@ TUW Flood maps are labelled as:
 
 ex.: `TUWB_MEAN_HAND_PDFX.tif`
 
+## Data and File format
+Flood maps are encoded as uint8, where: 
+* 1 - flood
+* 0 - no flood 
+* 255 - no data.
+
 ## Validation
 
 ### External Sentinel-1 Reference Flood Maps
@@ -81,9 +89,5 @@ Other relevant information:
 Analysis was done on E058N117T1 tile using [Equi7grid](https://github.com/TUW-GEO/Equi7Grid) tiling and projection 
 system.
 
-### Data and File format
-Flood maps are encoded as uint8, where: 
-* 1 - flood
-* 0 - no flood 
-* 255 - no data.
+
 
