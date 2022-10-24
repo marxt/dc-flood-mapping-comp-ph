@@ -54,5 +54,36 @@ TUW Flood maps are labelled as:
 
 ex.: `TUWB_MEAN_HAND_PDFX.tif`
 
-## Validation Software
-Accuracy assessment metrics were performed using [ABCRaster]() software.
+## Validation
+
+### External Sentinel-1 Reference Flood Maps
+Reference flood maps from operation flood mapping activation used in the study were retrieved from:
+* Philippine Department of Science and Techonology (DOST) Advanced Science and Technology Institute 
+([ASTI](https://asti.dost.gov.ph/)). Method is based on U-net framework document in this 
+[paper](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLIII-B3-2020/1663/2020/).
+* Sentinel Asia [access point here](https://sentinel-asia.org/EO/2020/article20201111PH.html). Flood map generated using
+a change detection workflow with manually selected threshold (*from direct communication).
+Both flood maps retrieved in shapefile format.
+
+### Sentinel-2 Reference
+Sentinel-2 flood map was generated using MDWI change detection method. Sentinel-2 data used were:
+* S2A_MSIL2A_20201113T021941_N0214_R003_T51QUV_20201113T055836 (flood)
+* S2B_MSIL2A_20200909T021609_N0214_R003_T51QUV_20200909T065335 (no flood)
+
+### Software
+Accuracy assessment metrics were performed using [ABCRaster](https://github.com/TUW-GEO/ABCRaster) software. ABCRaster 
+can accept refrence flood maps in shapefile format, and features random sampling and accuracy metric computations.
+
+## Miscellaneous information
+Other relevant information:
+
+### Grid and Projection
+Analysis was done on E058N117T1 tile using [Equi7grid](https://github.com/TUW-GEO/Equi7Grid) tiling and projection 
+system.
+
+### Data and File format
+Flood maps are encoded as uint8, where: 
+* 1 - flood
+* 0 - no flood 
+* 255 - no data.
+
